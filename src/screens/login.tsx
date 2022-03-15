@@ -1,7 +1,10 @@
 import React, {FC, useState} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, Alert} from 'react-native';
 import {Input, Button} from '../components';
-import firebase from 'firebase/compat';
+
+import firebase from '@react-native-firebase/app';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 const App: FC = props => {
   const [email, setEmail] = useState<string | null>(null);
@@ -9,9 +12,7 @@ const App: FC = props => {
 
   const login = async () => {
     if (email && password) {
-      const {user} = await firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password);
+      const {user} = await auth().signInWithEmailAndPassword(email, password);
     } else {
       Alert.alert(`Missing Fields`);
     }

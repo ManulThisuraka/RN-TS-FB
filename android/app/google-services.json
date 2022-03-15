@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "84862577694",
+    "project_id": "reactnativetutorial-cf629",
+    "storage_bucket": "reactnativetutorial-cf629.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84862577694:android:0f64e92b7f8cc096b3920f",
+        "android_client_info": {
+          "package_name": "com.projectts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84862577694-mi8rucrvjmep7fh57bge4negidets2gg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfNMT7-6zO8cKL3W_FSuBvdLuAH5LM9Ns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84862577694-mi8rucrvjmep7fh57bge4negidets2gg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

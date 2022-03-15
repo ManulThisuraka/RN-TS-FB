@@ -1,20 +1,21 @@
 import React, {FC, useEffect, useState} from 'react';
 import {Text, View, StyleSheet, Alert} from 'react-native';
 import {Button, Input} from '../components';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
+import firebase from '@react-native-firebase/app';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 const App: FC = props => {
   const [msg, setMsg] = useState<string | null>(null);
   const [user, setUser] = useState<any>(null);
 
   const signOut = () => {
-    firebase.auth().signOut();
+    auth().signOut();
   };
 
   const fetchCurrentUser = async () => {
-    const uid = firebase.auth().currentUser.uid;
-    const user = await firebase.firestore().collection('users').doc(uid).get();
+    const uid = auth().currentUser?.uid;
+    const user = await firestore().collection('users').doc(uid).get();
     setUser({id: user.id, ...user.data()});
   };
 
@@ -31,7 +32,7 @@ const App: FC = props => {
       };
 
       try {
-        await firebase.firestore().collection('posts').add(data);
+        await firestore().collection('posts').add(data);
       } catch (err) {
         console.log(err);
       }

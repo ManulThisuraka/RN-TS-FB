@@ -1,8 +1,8 @@
 // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/compat/app";
-import firebase from "firebase/compat/app";
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+import firebase from "@react-native-firebase/app";
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,4 +17,3 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-firebase.firestore().settings({ experimentalForceLongPolling: true });

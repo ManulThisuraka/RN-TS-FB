@@ -10,7 +10,9 @@ import {
 } from 'react-native';
 import {Input, Button} from '../components';
 
-import firebase from 'firebase/compat';
+import firebase from '@react-native-firebase/app';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 const App: FC = props => {
   const [name, setName] = useState<String | null>(null);

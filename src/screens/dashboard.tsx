@@ -1,15 +1,16 @@
 import React, {FC, useEffect, useState} from 'react';
 import {Text, View, StyleSheet, FlatList, Alert} from 'react-native';
 import {ApprovalRender} from '../components';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
+
+import firebase from '@react-native-firebase/app';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 const App: FC = () => {
   const [posts, setPosts] = useState<any>(null);
 
   const fetchPendingPost = async () => {
-    const posts = await firebase
-      .firestore()
+    const posts = await firestore()
       .collection('posts')
       .where('approved', '==', false)
       .get();
